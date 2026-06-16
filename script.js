@@ -244,14 +244,14 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 1,
       name: "Kel. Bapak Ahmad",
       status: "hadir",
-      message: "Selamat menempuh hidup baru Amyra & Hajrun! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Dilancarkan sampai hari H pernikahan yaa.",
+      message: "Selamat menempuh hidup baru Amyra & Jahrul! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Dilancarkan sampai hari H pernikahan yaa.",
       time: "1 jam yang lalu"
     },
     {
       id: 2,
       name: "Rian & Shinta",
       status: "hadir",
-      message: "Barakallahu lakuma wa baraka 'alaikuma wa jama'a bainakuma fii khair. Selamat ya bro Hajrun dan istri! Semoga bahagia selamanya.",
+      message: "Barakallahu lakuma wa baraka 'alaikuma wa jama'a bainakuma fii khair. Selamat ya bro Jahrul dan istri! Semoga bahagia selamanya.",
       time: "4 jam yang lalu"
     },
     {
