@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generator Link Undangan - Amyrah & Jahrul</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    body {
+      background: #fcfaf6 url('./bg2.webp') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    .share-container {
+      width: 100%;
+      max-width: 550px;
+      z-index: 10;
+      margin: 1.5rem auto;
+    }
+    .share-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .share-header h1 {
+      font-family: 'Comfortaa', sans-serif;
+      font-size: 1.6rem;
+      color: #1a2a5e;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+    }
+    .share-header p {
+      font-size: 0.85rem;
+      color: #555;
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      font-size: 0.85rem;
+      color: #3a332a;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid rgba(212, 175, 55, 0.3);
+      border-radius: 12px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+      color: #333;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 8px rgba(212, 175, 55, 0.25);
+      background: #ffffff;
+    }
+    .preview-box {
+      background: rgba(26, 42, 94, 0.04);
+      border: 1px dashed rgba(26, 42, 94, 0.2);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      font-size: 0.82rem;
+      color: #333;
+      white-space: pre-wrap;
+      max-height: 180px;
+      overflow-y: auto;
+      line-height: 1.5;
+    }
+    .btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Comfortaa', sans-serif;
+      text-decoration: none;
+      border: none;
+    }
+    .btn-wa {
+      background-color: #25d366;
+      color: white;
+      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+      grid-column: span 2;
+      font-size: 0.95rem;
+      padding: 0.9rem 1rem;
+    }
+    .btn-wa:hover {
+      background-color: #20ba56;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+    }
+    .btn-copy {
+      background-color: var(--primary-color);
+      color: white;
+      box-shadow: 0 4px 10px rgba(212, 175, 55, 0.25);
+    }
+    .btn-copy:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+    .btn-link {
+      background-color: #1a2a5e;
+      color: white;
+      box-shadow: 0 4px 10px rgba(26, 42, 94, 0.25);
+    }
+    .btn-link:hover {
+      background-color: #121d42;
+      transform: translateY(-2px);
+    }
+    /* Brand footer */
+    .footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      color: #777;
+    }
+    .footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="share-container">
+    <div class="glass-card">
+      <div class="share-header">
+        <h1>Generator Link WhatsApp</h1>
+        <p>Gunakan halaman ini untuk membagikan undangan pernikahan secara personal langsung ke WhatsApp tamu.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="inputDomain">Domain / Link Undangan Anda</label>
+        <input type="text" id="inputDomain" class="form-control" value="https://amyrah-jahrul.wedding" placeholder="https://domain-anda.com">
+        <small style="font-size: 0.72rem; color: #888; display: block; margin-top: 0.2rem;">*Ganti jika domain website Anda sudah di-upload ke internet</small>
+      </div>
+
+      <div class="form-group">
+        <label for="inputNama">Nama Tamu</label>
+        <input type="text" id="inputNama" class="form-control" placeholder="Contoh: Budi Santoso" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="inputPhone">Nomor WhatsApp Tamu</label>
+        <input type="text" id="inputPhone" class="form-control" placeholder="Contoh: 081234567890 atau 628123456789">
+        <small style="font-size: 0.72rem; color: #888; display: block; margin-top: 0.2rem;">*Bisa dilewati jika hanya ingin menyalin link saja</small>
+      </div>
+
+      <div class="form-group">
+        <label>Preview Pesan WhatsApp</label>
+        <div id="textPreview" class="preview-box">Masukan nama tamu untuk melihat preview pesan...</div>
+      </div>
+
+      <div class="btn-row">
+        <button id="btnShareWA" class="btn-action btn-wa">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" style="margin-right: 4px;">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.966C16.59 1.978 14.12 .953 11.49.953c-5.445 0-9.87 4.37-9.874 9.8.001 2.01.536 3.974 1.547 5.695l-1.01 3.692 3.812-.986zm11.366-7.412c-.3-.15-1.772-.875-2.046-.975-.275-.1-.475-.15-.675.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-3.537-1.766-4.665-2.927-5.267-3.957-.15-.25-.017-.384.116-.518.12-.12.275-.325.412-.488.138-.162.18-.275.275-.462.1-.187.05-.35-.025-.5-.075-.15-.675-1.625-.925-2.225-.244-.589-.491-.51-.675-.51-.174-.001-.374-.001-.573-.001-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.11 3.224 5.112 4.521.714.309 1.272.493 1.707.632.716.227 1.37.195 1.887.118.577-.087 1.772-.725 2.022-1.425.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z"/>
+          </svg>
+          Kirim via WhatsApp
+        </button>
+        <button id="btnCopyLink" class="btn-action btn-link">
+          Salin Link Saja
+        </button>
+        <button id="btnCopyMsg" class="btn-action btn-copy">
+          Salin Pesan + Link
+        </button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2026 Amyrah & Jahrul · Undangan oleh <a href="https://www.instagram.com/war.digital_" target="_blank">WARDIGITAL</a></p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast-notification"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const inputDomain = document.getElementById('inputDomain');
+      const inputNama = document.getElementById('inputNama');
+      const inputPhone = document.getElementById('inputPhone');
+      const textPreview = document.getElementById('textPreview');
+      const btnShareWA = document.getElementById('btnShareWA');
+      const btnCopyLink = document.getElementById('btnCopyLink');
+      const btnCopyMsg = document.getElementById('btnCopyMsg');
+      const toast = document.getElementById('toast');
+
+      // Ambil domain asal otomatis dari browser jika dibuka dari server
+      const currentUrl = window.location.origin + window.location.pathname;
+      const defaultDomain = currentUrl.substring(0, currentUrl.lastIndexOf('/'));
+      if (defaultDomain && defaultDomain.startsWith('http')) {
+        inputDomain.value = defaultDomain;
+      }
+
+      function generateMessage() {
+        const domain = inputDomain.value.trim();
+        const nama = inputNama.value.trim() || "[Nama Tamu]";
+        const url = `${domain}/index.html?to=${encodeURIComponent(nama)}`;
+        
+        const text = `Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i *_${nama}_* untuk menghadiri acara pernikahan kami.
+
+Detail info & lokasi acara dapat diakses melalui link undangan berikut:
+${url}
+
+Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.
+
+Terima Kasih.
+~ Amyrah & Jahrul`;
+
+        return { text, url };
+      }
+
+      function updatePreview() {
+        const { text } = generateMessage();
+        textPreview.innerText = text;
+      }
+
+      function showToast(message) {
+        if (!toast) return;
+        toast.innerText = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2500);
+      }
+
+      // Format nomor telepon menjadi format internasional (diawali 62)
+      function formatPhoneNumber(num) {
+        let cleanNum = num.replace(/\D/g, ''); // Hapus semua karakter non-angka
+        if (cleanNum.startsWith('0')) {
+          cleanNum = '62' + cleanNum.substring(1);
+        }
+        return cleanNum;
+      }
+
+      // Event Listeners
+      inputDomain.addEventListener('input', updatePreview);
+      inputNama.addEventListener('input', updatePreview);
+      inputPhone.addEventListener('input', updatePreview);
+
+      // Kirim via WA
+      btnShareWA.addEventListener('click', () => {
+        const nama = inputNama.value.trim();
+        if (!nama) {
+          showToast("Harap isi Nama Tamu terlebih dahulu!");
+          return;
+        }
+
+        const phone = formatPhoneNumber(inputPhone.value.trim());
+        const { text } = generateMessage();
+        
+        let waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+        if (phone) {
+          waUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(text)}`;
+        }
+        
+        window.open(waUrl, '_blank');
+      });
+
+      // Salin Link Saja
+      btnCopyLink.addEventListener('click', () => {
+        const nama = inputNama.value.trim();
+        if (!nama) {
+          showToast("Harap isi Nama Tamu terlebih dahulu!");
+          return;
+        }
+        const { url } = generateMessage();
+        navigator.clipboard.writeText(url)
+          .then(() => showToast("Link undangan berhasil disalin!"))
+          .catch(() => showToast("Gagal menyalin link."));
+      });
+
+      // Salin Pesan + Link
+      btnCopyMsg.addEventListener('click', () => {
+        const nama = inputNama.value.trim();
+        if (!nama) {
+          showToast("Harap isi Nama Tamu terlebih dahulu!");
+          return;
+        }
+        const { text } = generateMessage();
+        navigator.clipboard.writeText(text)
+          .then(() => showToast("Seluruh pesan berhasil disalin!"))
+          .catch(() => showToast("Gagal menyalin pesan."));
+      });
+
+      // Panggil preview awal
+      updatePreview();
+    });
+  </script>
+</body>
+</html>
