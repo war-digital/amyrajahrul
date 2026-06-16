@@ -10,6 +10,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const formUcapan = document.getElementById('formUcapan');
   const ucapanFeed = document.getElementById('ucapanFeed');
 
+  // --- PARSE URL QUERY PARAMETER 'to' ---
+  const urlParams = new URLSearchParams(window.location.search);
+  const guestNameParam = urlParams.get('to');
+  let decodedGuestName = "";
+  
+  if (guestNameParam) {
+    decodedGuestName = decodeURIComponent(guestNameParam);
+    
+    // Ganti nama tamu di Cover
+    const coverGuestName = document.getElementById('coverGuestName');
+    if (coverGuestName) {
+      coverGuestName.innerText = decodedGuestName;
+    }
+    
+    // Isi otomatis di Form Ucapan saat dimuat
+    const inputNama = document.getElementById('nama');
+    if (inputNama) {
+      inputNama.value = decodedGuestName;
+    }
+  }
+
   // ============================================================
   //  GOOGLE SHEETS INTEGRATION
   //  Paste URL Web App dari Google Apps Script di bawah ini:
@@ -382,7 +403,8 @@ document.addEventListener('DOMContentLoaded', () => {
       kirimKeSheets({
         name: newWish.name,
         status: newWish.status,
-        message: newWish.message
+        message: newWish.message,
+        from: decodedGuestName || "Umum"
       });
 
       renderWishes();
