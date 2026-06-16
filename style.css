@@ -1070,22 +1070,6 @@ textarea.form-control {
 
 /* RESPONSIVE BREAKPOINTS */
 @media (max-width: 900px) {
-  .mempelai-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  .mempelai-divider {
-    grid-column: span 1;
-    margin: 0.5rem 0;
-  }
-  .acara-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .ucapan-layout {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
   .cover-title {
     font-size: 2.4rem;
   }
@@ -1119,22 +1103,7 @@ textarea.form-control {
     font-size: 2.0rem;
   }
   .welcome-title {
-    font-size: 2.5rem;
-  }
-  .photo-frame {
-    width: 210px;
-    height: 270px;
-    padding: 12px 12px 35px 12px;
-  }
-  .photo-frame img {
-    height: 210px;
-  }
-  .mempelai-name {
-    font-size: 2.3rem;
-  }
-  .quran-arabic {
-    font-size: 1.5rem;
-    line-height: 2;
+    font-size: 1.9rem !important;
   }
   .music-toggle {
     bottom: 1.5rem;
