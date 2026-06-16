@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- COUNTDOWN TIMER ---
-  // Target date: 03 July 2026 at 09:00:00 (Asia/Makassar or local time)
-  const targetDate = new Date('July 3, 2026 09:00:00').getTime();
+  // Target date: 03 July 2026 at 14:00:00 (Asia/Makassar or local time)
+  const targetDate = new Date('July 3, 2026 14:00:00').getTime();
   let isCountdownCountUpActive = false;
   let countUpTimeouts = [];
 
