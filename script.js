@@ -9,6 +9,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const copyBtn = document.getElementById('btnCopy');
   const formUcapan = document.getElementById('formUcapan');
   const ucapanFeed = document.getElementById('ucapanFeed');
+
+  // ============================================================
+  //  GOOGLE SHEETS INTEGRATION
+  //  Paste URL Web App dari Google Apps Script di bawah ini:
+  // ============================================================
+  const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbz6cWVjraWKTkWnnE3s595JNzT4jwyKQcf809mXUGVtqW_9WZjBKgZ-MzeTzrRWeFca/exec";
+
+  // --- KIRIM UCAPAN KE GOOGLE SHEETS ---
+  function kirimKeSheets(data) {
+    if (!GOOGLE_SHEET_URL || GOOGLE_SHEET_URL === "PASTE_URL_APPS_SCRIPT_DI_SINI") return;
+    fetch(GOOGLE_SHEET_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    }).catch(err => console.log("Gagal kirim ke Sheets:", err));
+  }
   
   // Simulator elements
   const btnIphone = document.getElementById('btnIphone');
@@ -244,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 1,
       name: "Kel. Bapak Ahmad",
       status: "hadir",
-      message: "Selamat menempuh hidup baru Amyra & Jahrul! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Dilancarkan sampai hari H pernikahan yaa.",
+      message: "Selamat menempuh hidup baru Amyrah & Jahrul! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Dilancarkan sampai hari H pernikahan yaa.",
       time: "1 jam yang lalu"
     },
     {
@@ -258,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 3,
       name: "Indah Fitriani",
       status: "ragu",
-      message: "Selamat berbahagia ya Amyra sayang! Maaf belum bisa mastiin hadir langsung karena berbenturan tugas kerja, tapi doa terbaik selalu mengiringi kalian.",
+      message: "Selamat berbahagia ya Amyrah sayang! Maaf belum bisa mastiin hadir langsung karena berbenturan tugas kerja, tapi doa terbaik selalu mengiringi kalian.",
       time: "Yesterday"
     }
   ];
@@ -280,8 +297,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function getStatusLabel(status) {
     switch(status) {
-      case 'hadir': return '✓ Hadir';
-      case 'tidak-hadir': return '✕ Absen';
+      case 'hadir': return 'âœ“ Hadir';
+      case 'tidak-hadir': return 'âœ• Absen';
       default: return '? Ragu-ragu';
     }
   }
@@ -350,18 +367,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const newWish = {
-        id: Date.now(), // Unique ID
+        id: Date.now(),
         name: inputNama.value.trim(),
         status: selectStatus.value,
         message: txtUcapan.value.trim(),
         time: "Baru saja"
       };
 
+      // Simpan ke localStorage (tampil di undangan)
       wishes.push(newWish);
       localStorage.setItem('wedding_wishes', JSON.stringify(wishes));
-      
+
+      // Kirim ke Google Sheets (database)
+      kirimKeSheets({
+        name: newWish.name,
+        status: newWish.status,
+        message: newWish.message
+      });
+
       renderWishes();
-      showToast("Ucapan berhasil dikirim!");
+      showToast("Ucapan berhasil dikirim! 💌");
 
       // Reset form
       formUcapan.reset();
@@ -394,3 +419,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial render
   renderWishes();
 });
+
